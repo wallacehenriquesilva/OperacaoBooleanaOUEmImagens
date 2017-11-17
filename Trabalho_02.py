@@ -26,11 +26,8 @@ class Trabalho_02(object):
         # Cria a máscara de acordo com os limites atribuidos.
         mask = cv2.inRange(img_hsv, lower_blue, upper_blue);
 
-        # Aplica mascara na imagem
-        res = cv2.bitwise_and(imagem, imagem, mask=mask);
-
-        # Retorna a imagem já com a máscara aplicada.
-        return res;
+        # Retorna a imagem aplicando a máscara.
+        return cv2.bitwise_and(imagem, imagem, mask=mask);
 
     """
     Função responsável por realizar a operação booleana OU em duas imagens.
