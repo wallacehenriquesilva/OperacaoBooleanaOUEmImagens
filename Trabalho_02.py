@@ -20,11 +20,11 @@ class Trabalho_02(object):
         img_hsv = cv2.cvtColor(imagem, cv2.COLOR_BGR2HSV);
 
         # Define os limites da máscara
-        lower_blue = np.array([min, 0, 0]);
-        upper_blue = np.array([max, 255, 255]);
+        lower = np.array([min, 0, 0]);
+        upper = np.array([max, 255, 255]);
 
         # Cria a máscara de acordo com os limites atribuidos.
-        mask = cv2.inRange(img_hsv, lower_blue, upper_blue);
+        mask = cv2.inRange(img_hsv, lower, upper);
 
         # Retorna a imagem aplicando a máscara.
         return cv2.bitwise_and(imagem, imagem, mask=mask);
